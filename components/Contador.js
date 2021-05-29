@@ -21,8 +21,8 @@ const Contador = () => {
     <div>
       <h1>Contador: <span className={contador < 0 ? "menor" : "mayor"}>{contador}</span></h1>
       <hr />
-      <button onClick={sumar}>Aumentar</button>
-      <button onClick={restar}>Disminuir</button>
+      <button onClick={sumar}>Sumar</button>
+      <button onClick={restar}>Restar</button>
     </div>
   );
 }
