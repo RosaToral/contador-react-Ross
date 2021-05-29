@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <title>Mi primera pagina web </title>
+    <meta charset="UTF-8">
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body lang="es">
+    <div id="root"></div>
+    
+    <!--Crear un componente interno-->
+    <script type="text/babel">
+
+      //Forma antigua: usando clases.
+      /*class Saludo extends React.Component {
+        render()  {
+          return (<h1>Hola</h1>);
+        }
+      };*/
+
+      //Se crea una función que regrese una etiqueta html
+
+      //Forma nueva: funciones
+      /*const Saludo = () => {
+        return (<h1>Hola nuevo</h1>);
+      };*/
+
+      const Interpolar = () => {
+        //const name = prompt("Nombre: ");
+        const [cont, setCont] = React.useState(0);
+
+        setInterval(() => setCont(cont+1),1000);
+        return (
+          <div>
+            <h1>Hola variable: Rosa</h1>
+            <h3>Fecha: { new Date().getDate() }</h3>
+            <hr />
+            <h3>Contando: { cont }</h3>
+          </div>
+        );
+      };
+      
+      ReactDOM.render(<Interpolar />, document.getElementById("root"));
+    </script>
+  </body>
+</html>
